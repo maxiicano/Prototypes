@@ -1,16 +1,11 @@
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
-const content2 = document.querySelector('.content2');
 
-const greetings = [
-    'Im good you little piece of shit',
-    'Doing good homeboi',
-    'leave me alone'
-];
-
+const greetings = ['Im good how about you?', 'Doing good', 'leave me alone', 'the weather is good and so am I'];
 const weather = ['Weather is fine', 'Look through a window', 'We\'re dutch, so it cant be good'];
 const music = ['i like Red Hot Chili Peppers', 'music that makes me cry', 'yea yea yea yea'];
-const restaurant = ['You can\'t even go due to corona anyway', 'you\'re fat enough already', 'Macdonalds sounds good'];
+const restaurant = ['You can\'t even go due to corona anyway', 'anything thats fast', 'Macdonalds sounds good'];
+const corona = ['Corona is taking longer then expected']
 
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -48,10 +43,13 @@ function readOutLoud(message){
      }else if(message.includes('music')){
         const finalText = music[Math.floor(Math.random() * music.length)];
         speech.text = finalText;
+     }else if(message.includes('corona')){
+        const finalText = corona[Math.floor(Math.random() * corona.length)];
+        speech.text = finalText;
      }
  
     speech.volume = 1;
-    speech.rate = 0.75;
-    speech.pitch = 0.75;
+    speech.rate = 0.8;
+    speech.pitch = 1.25;
     window.speechSynthesis.speak(speech)
 }
