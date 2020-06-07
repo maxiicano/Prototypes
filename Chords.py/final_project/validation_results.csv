@@ -1,0 +1,4 @@
+instrument, categorical_accuracy
+Guitar, 0.95
+Piano, 0.91
+Violin, 0.82
